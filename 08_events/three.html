@@ -7,9 +7,26 @@
 </head>
 <body>
     <h1>Chai aur JavaScript</h1>
+    <button id="start">Start</button>
     <button id="stop">Stop</button>
 </body>
 <script>
+   const sayDate = function(str) {
+        console.log(`${str} Hitesh`, Date.now())
+   }
+   // setInterval(sayDate, 1000); // This will run the code in function sayDate every 1 seconds
+   let intervalId = null; // This will hold the reference of the interval
    
+   document.querySelector("#start").addEventListener('click', function() {
+        if (!intervalId) { // Only start if not already running
+            intervalId = setInterval(sayDate, 1000, "Hi");
+        }
+        setInterval(intervalId); // This will start the interval again and code in function sayDate will run every 1 seconds
+   })
+   
+   document.querySelector("#stop").addEventListener('click', function() {
+        clearInterval(intervalId); // This will stop the interval and code in function sayDate will not run every 1 seconds
+        intervalId = null; // Good practice to clear the reference
+   })
 </script> 
 </html>
