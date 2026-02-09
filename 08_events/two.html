@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    /* If you see window object in browser console, you will see lot of fuinctions like setInterval,
+     setTimeout, clearInterval, clearTimeout etc. These are the functions which are used to run a 
+     code after some time or to run a code repeatedly after some time.
+    */
+    setTimeout(() => {
+        console.log("Chai ready!")
+    }, 2000); // This will run the code after 2 seconds
+
+    const sayHitest = function() {
+        console.log("Hitesh")
+    }
+    setTimeout(sayHitest, 2000); // This will also run the code in function sayHitesh after 2 seconds
+
+    // document.querySelector('h1').innerHTML = "Best JS series" // This will immediately change the text of h1 to "Best JS series"
+    const changeTest = function() {
+        document.querySelector('h1').innerHTML = "Best JS series"
+    }
+    // setTimeout(changeTest, 2000); // This will change the text of h1 to "Best JS series" after 2 seconds
+    const textChangingStatement = setTimeout(changeTest, 2000); // Works same but now we have reference of this timeout in textChangingStatement variable
+
+    document.querySelector('#stop').addEventListener('click', function() {
+        clearTimeout(textChangingStatement); // This will stop the timeout and text of h1 will not change to "Best JS series"
+    })
+
+
+</script> 
+</html>
