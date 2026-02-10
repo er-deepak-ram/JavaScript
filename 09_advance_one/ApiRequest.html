@@ -17,6 +17,7 @@ Value	State	Description
 4	DONE	The operation is complete.
 </body>
 <script>
+    // ********************** XMLHttpRequest **********************
     const requestUrl = 'https://api.github.com/users/er-deepak-ram'
     // XMLHttpRequest object have readyState property. And we can this object to send request 
     // to server and get response from server
@@ -34,6 +35,18 @@ Value	State	Description
             console.log(`${data.name} have ${data.followers} followers on GitHub`) // Deepak Ram
             console.log(xhr.status) // 200
             
+            /* "xhr.responseText" or this.responseText for getting the response?
+                this:
+                    Inside the callback function, this refers to the xhr object
+                    *) Works because regular functions have their own this context
+                xhr:
+                    *) Relies on the closure to access the xhr variable from the outer scope
+
+                Recommendation from claude:
+                    *) Use this with regular functions (more conventional, cleaner)
+                    *) Use xhr with arrow functions (only option that works)(because in arrow function
+                        'this' is NOT the xhr object)
+            */
         }
     }
     // console.log(xhr.readyState) // 1
