@@ -103,3 +103,32 @@ fetch('https://jsonplaceholder.typicode.com/users')
 .then((result) => result.json())
 .then((jsonData) => console.log(jsonData))
 .catch((error) => console.log(error))
+
+/**
+ * Interview Questions:
+ * 1. If you made a request using promise and you receive an error code 404, where you will find it, in resolve or reject?
+ * Answer: I'll find it in resolve (the .then() block), not reject.
+ *      because,
+ *        1. Fetch only rejects on network failures (no internet, DNS failure, CORS issues, etc.)
+ *        2. HTTP error codes (404, 500, etc.) are treated as successful responses - they resolve, not reject
+ *        3. You need to manually check response.ok or response.status to handle HTTP errors
+ * 
+ * See below example for more clarity:
+ */
+fetch('https://jsonplaceholder.typicode.com/users/999999')
+    .then(response => {
+        console.log('This runs even for 404!')
+        console.log('Status:', response.status) // 404
+        console.log('OK:', response.ok) // false
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        return response.json()
+    })
+    .then(data => {
+        console.log('Data:', data)
+    })
+    .catch(error => {
+        console.log('Caught in reject:', error)
+    })
