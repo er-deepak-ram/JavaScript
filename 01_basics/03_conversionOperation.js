@@ -6,16 +6,22 @@ let score1 = null;
 let scrore2 = undefined;
 let score3 = true;
 
+// Conversion into Number
 let valueInNumber = Number(score); // convert to number
 console.log(typeof valueInNumber); // number
 console.log(valueInNumber); // NaN => Not a Number, 0 for score1 and NaN for score2, 1 for score3 because it's true (0 for false)
-// "33" => 33
-// "33abc" => NaN
-// null => 0
-// undefined => NaN
-// true => 1; false => 0
+
+// If you want to convert different types of data into Number:
+// 1. "33" => 33
+// 2. "33abc" => NaN
+// 3. null => 0
+// 4. undefined => NaN
+// 5. true => 1; false => 0
 
 // let isLoggedIn = 1;
+// let booleanIsLoggedIn = Boolean(isLoggedIn);
+/// console.log(booleanIsLoggedIn); // true 
+
 let isLoggedIn = "Deeppak";
 let booleanIsLoggedIn = Boolean(isLoggedIn); // convert to boolean
 console.log(booleanIsLoggedIn); // true 
@@ -32,7 +38,7 @@ console.log(StringNumber); // "33"
 console.log("=================================");
 let value = 3
 let negValue = -value;
-console.log(negValue);
+console.log(negValue); // -3
 
 // console.log(2+2);
 // console.log(2-2);
@@ -51,8 +57,8 @@ console.log(1 + "2"); // 12
 console.log("1" + 2 + 2); // 122
 console.log(1 + 2 + "2"); // 32
 
-console.log(+true); // 1 
-console.log(+""); // 0
+console.log(+true); // Confusing code (1, because true is internally 1) 
+console.log(+""); // 0 (Again confusing and should not be practiced)
 
 let gameCounter = 100
 console.log(`gameCounter: ${gameCounter}`); // 100
