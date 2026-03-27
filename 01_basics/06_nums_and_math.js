@@ -19,7 +19,7 @@ console.log(hundreds.toLocaleString('en-IN')); // Returns a String -> 10,00,000 
 
 // +++++++++++++++++++++++++++++++ Math ++++++++++++++++++++++++++++++++
 
-console.log(Math); //Try this in chrome console to see all Math methods and properties
+console.log(Math); // Object [Math] {} Try this in chrome console to see all Math methods and properties
 console.log(Math.abs(-6));  // 6
 console.log(Math.round(4.6)); // 5
 console.log(Math.ceil(4.2)); // 5 
@@ -27,10 +27,16 @@ console.log(Math.floor(4.9)); // 4
 console.log(Math.min(4, 3, 6, 8)); // 3
 console.log(Math.max(4, 3, 6, 8)); // 8
 
-console.log(Math.random());
+console.log(Math.random()); // Always returns number between 0 and 1
 
-console.log("Dice");
+console.log("1 to 6 Dice");
 const dice = Math.floor(Math.random() * 6) + 1; // 1 to 6
+/**
+ * Math.random() -> - generates a random decimal number between 0 (inclusive) and 1 (exclusive).
+ * Math.random() * 6 -> - scales that random number to a range between 0 and just under 6. Example: 0.2345 * 6 = 1.407, 0.8762 * 6 = 5.257
+ * Math.floor(...) -> - rounds the number down to the nearest whole integer. So the possible results are 0, 1, 2, 3, 4, 5
+ * + 1 -> - shifts the range up by one, making the possible results 1, 2, 3, 4, 5, 6
+ */
 console.log(dice);
 console.log("Generic Dice");
 const min = 10
