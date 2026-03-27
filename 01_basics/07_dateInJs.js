@@ -1,4 +1,4 @@
-// console.log(Temporal.Now.instant()); Will be available in future versions of JS
+// console.log(Temporal.Now.instant());  Will be available in future versions of JS
 
 let myDate = new Date();
 console.log(typeof myDate); // object
@@ -24,7 +24,7 @@ console.log(customDate.toLocaleString()); // 16/1/2025, 5:30:00 am (When date gi
 customDate = new Date("11-01-2026");
 console.log(customDate.toLocaleString()); // 1/11/2026, 12:00:00 am
 
-let myTimeStamp = Date.now();
+let myTimeStamp = Date.now();   // Returns the number of milliseconds elapsed since midnight, January 1, 1970 UTC
 console.log(myTimeStamp); // 1768102621363 (Milliseconds from 1 Jan 1970 to now)
 console.log(customDate.getTime()); // 1793471400000 (Converting date to timestamp which is milliseconds from 1 Jan 1970 to that date)
 console.log(Math.floor(Date.now() / 1000)); // 1768102749 (converting milliseconds to seconds)
@@ -38,5 +38,13 @@ console.log(today.getDay()); // 0 (Day of week starts from Sunday as 0)
 today = today.toLocaleString('default', { weekday: 'long', }); // "Sunday"
 console.log(today); // Sunday
 
+/**
+ * toLocaleString -> Converts the date into a string, formatted according to a given locale and options.
+ * 'default' -> Lets JavaScript pick the default locale of the environment (usually based on the system/browser settings).
+ * { weekday: 'long', } -> This option tells JavaScript to return the full name of the weekday.
+ *      'long'  -> - full name (e.g., "Monday", "Tuesday")
+ *      'short' -> - abbreviated name (e.g., "Mon", "Tue")
+ *      'narrow'-> - minimal form (e.g., "M", "T")
+ */
 
 
