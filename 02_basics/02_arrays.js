@@ -23,8 +23,7 @@ console.log(flattenedArray); // [1, 2, 3, 4, 5, 6, 7, 6, 7, 4, 5]
  * the Infinity here is a special built‑in constant in JavaScript. It represents a value larger than any finite number.
  * When used as the argument to .flat(), it means:
  *      - "Flatten this array to any depth necessary."
- *      - Instead of specifying a number like 1 (one level deep) or 2 (two levels deep), Infinity tells JavaScript to keep 
- *        flattening until there are no nested arrays left.
+ *      - Instead of specifying a number like 1 (one level deep) or 2 (two levels deep), Infinity tells JavaScript to keep flattening until there are no nested arrays left.
  */
 
 console.log(Array.isArray("Deeppak")); // false
