@@ -5,7 +5,7 @@ const myArr = [10, 20, 30, 40, 50] // In JS arrays are resizable and can hold mu
 const myHeros = ["Ironman", "Spiderman", "Thor", "Hulk"]
 const myArr2 = new Array(11, 22, 33, 44, 55) // another way to create array using constructor
 
-console.log(myArr[0]);
+console.log(myArr[0]);  // 10
 
 // In JS Arrays copy operations are done by reference (shallow copy)
 
@@ -13,16 +13,16 @@ console.log(myArr[0]);
 
 myArr.push(60) // adds element at the end
 myArr.push(70)
-console.log(myArr);
+console.log(myArr);    // [10, 20, 30, 40, 50, 60, 70]
 
 myArr.pop() // removes element from the end
-console.log(myArr);
+console.log(myArr);     // [10, 20, 30, 40, 50, 60]
 
 myArr.unshift(0) // adds element at the start
-console.log(myArr);
+console.log(myArr); // [0, 10, 20, 30, 40, 50, 60]
 
 myArr.shift() // removes element from the start
-console.log(myArr);
+console.log(myArr);     // [10, 20, 30, 40, 50, 60]
 
 console.log(myArr.includes(100)); // false. Returns boolean if element is present
 console.log(myArr.indexOf(100)); // -1. Returns index of element if present else -1
@@ -39,6 +39,7 @@ const slicedArr = myArr.slice(1, 3) // creates a new array by slicing from start
 console.log("Sliced Array", slicedArr); // [ 20, 30 ]
 console.log("Original Array after slice", myArr); // [ 10, 20, 30, 40, 50, 60 ] - original array remains unchanged
 
+// splice @returns — An array containing the elements that were deleted
 const splicedArr = myArr.splice(1, 3) // removes elements from start index to end index and returns them
 console.log("Spliced Array", splicedArr); // [ 20, 30, 40 ]
 console.log("Original Array after splice", myArr); // [ 10, 50, 60 ] - original array is modified
